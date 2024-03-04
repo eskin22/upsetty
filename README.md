@@ -59,11 +59,11 @@ upset.show()
 Using the sample data provided above, the output is pictured below:
 
 <p align="center">
-    <img src='src/public/images/readme/examples/upset_chart_demo_0.png'>
+    <img src='upsetty/public/images/readme/examples/upset_chart_demo_0.png'>
 </p>
 
 > [!NOTE]  
-> If you're having trouble getting the output pictured above, you can run the demo script located at [upsetty/demo.py](demo.py).
+> If you're having trouble getting the output pictured above, you can run the demo script located at [upsetty/demo.py](upsetty/demo.py).
 
 You can also change the colors and sizing for various aspects of the plot by passing additional parameters to the `generate_plot` function like so:
 
