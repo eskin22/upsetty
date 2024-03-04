@@ -1,5 +1,5 @@
 <div align="center">
-    <img width="600px" src="src/public/images/readme/assets/logo.png">
+    <img width="600px" src="upsetty/public/images/readme/assets/logo.png">
     <p>Created by Blake McBride</p>
     <br><br>
 </div>
@@ -23,37 +23,9 @@ Currently, the number of tools to create UpSet plots is very limited. Indeed, ma
 
 ## 🚀 Installation
 
-> [!NOTE]  
-> This package is currently unavailable on PyPi. We're working on getting the project set up there so that you can use `pip` for installation in the future. For now, the only way to use this is via cloning the repo to your local.
-
-### Clone this Repository
-
-The instructions below are adapted from [GitHub's documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) on cloning repositories; for more information, please refer to the [docs](https://docs.github.com/en).
-
-<details><summary><b>Show instructions</b></summary>
-
-1. Navigate to the main page of the repository.
-
-2. Above the list of files, click **<> Code**.
-
-3. Copy the URL for the repository.
-    - To clone the repository using HTTPS, under "HTTPS", click <img src="src/public/images/readme/assets/misc/CopyIcon.png" width="17">.
-
-4. Open Git Bash.
-
-5. Change the current working directory to the location where you want the cloned repository. e.g.
-    ```
-    cd path/to/folder
-    ```
-
-6. Type `git clone`, and then paste the URL you copied earlier, e.g.
-    ```
-    git clone https://github.com/eskin22/upsetty
-    ```
-
-7. Press **Enter** to create your local clone.
-
-</details>
+```
+pip install upsetty
+```
 
 ## 🛠 Usage
 
@@ -112,7 +84,7 @@ upset = Upset.generate_plot(
 )
 ```
 <p align="center">
-    <img src="src/public/images/readme/examples/upset_chart_demo_1.png">
+    <img src="upsetty/public/images/readme/examples/upset_chart_demo_1.png">
 </p>
 
 ## 📌 Future Plans
