@@ -109,7 +109,9 @@ def autosize(fig, true_counts):
         xaxis2=dict(domain=[0.32, 0.39]),
         xaxis3=dict(domain=[0.39, 0.9]),
         yaxis1=dict(domain=[0, 0.5], showticklabels=False, autorange='reversed', side='right'),
-        yaxis2=dict(domain=[0.035, 0.45]),
+        # yaxis2=dict(domain=[0.035, 0.45]),
+        yaxis2=dict(domain=[0.055, 0.43]),
+        # yaxis2=dict(domain=[0.015, 0.47]),
         yaxis3=dict(domain=[0, 1]),
         showlegend=False
     )
