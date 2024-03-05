@@ -103,6 +103,7 @@ def add_category_counts_bar(fig, df, params):
     return fig, true_counts
     
 def autosize(fig, true_counts):
+    yaxis_domain = [0.055, 0.43] if len(true_counts.keys()) == 3 else [0.035, 0.45]
     fig.update_layout(
         plot_bgcolor='white',
         xaxis1=dict(domain=[0.1, 0.3], range=[1.75*min(-true_counts.values),0]),
@@ -110,8 +111,9 @@ def autosize(fig, true_counts):
         xaxis3=dict(domain=[0.39, 0.9]),
         yaxis1=dict(domain=[0, 0.5], showticklabels=False, autorange='reversed', side='right'),
         # yaxis2=dict(domain=[0.035, 0.45]),
-        yaxis2=dict(domain=[0.055, 0.43]),
+        # yaxis2=dict(domain=[0.055, 0.43]),
         # yaxis2=dict(domain=[0.015, 0.47]),
+        yaxis2=dict(domain=yaxis_domain),
         yaxis3=dict(domain=[0, 1]),
         showlegend=False
     )
