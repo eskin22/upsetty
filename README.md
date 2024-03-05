@@ -1,15 +1,29 @@
 <div align="center">
     <img width="600px" src="upsetty/public/images/readme/assets/logo.png">
-    <p>Created by Blake McBride</p>
-    <br><br>
+
 </div>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Latest_release-v0.1.1-blue?style=flat&logo=GitHub&logoColor=white&labelColor=black&color=%23e02d60">
+    <img src="https://img.shields.io/badge/Downloads-2-blue?style=flat&logo=GitHub&logoColor=white&labelColor=black&color=%235696d0">
+</p>
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Plotly](https://img.shields.io/badge/PLOTLY-%233F4F75?style=for-the-badge&logo=plotly&logoColor=white&labelColor=%233F4F75&color=%233F4F75
 )
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 
-## 🧐 What is this project? 
+# 📖 Table of Contents
+
+1. [🧮 What is upsetty?](#🧮-what-is-upsetty)
+    1. [What's an Upset Plot?](###what's-an-upset-plot?)
+    2. [Why create Upsetty?](###why-create-upsetty?) 
+2. [🚀 Quickstart](#🚀-quickstart)
+    1. [Installation](###installation)
+    2. [Usage](###usage)
+3. [📌 Future Plans](#📌-future-plans)
+
+# 🧮 What is upsetty? <img src="upsetty/public/images/readme/assets/B_watermark.svg" height="30" align="center">
 
 Python package for creating [UpSet plots](https://en.wikipedia.org/wiki/UpSet_Plot) using [Plotly](https://github.com/plotly/plotly.py).
 
@@ -21,38 +35,43 @@ An UpSet plot is a diagram used to quantitatively visualize sets and their inter
 
 Currently, the number of tools to create UpSet plots is very limited. Indeed, many of the previous packages for creating these plots have been deprecated or verbose. To that end, we offer **upsetty** as a lightweight, easy-to-use alternative for analyzing overlapping sets in Python.
 
-## 🚀 Installation
+# 🚀 Quickstart
+
+### Installation
 
 ```
 pip install upsetty
 ```
 
-## 🛠 Usage
-
-Once you've installed the package, you can simply import the **Upset class** like so:
+### Usage
 
 ```
 from upset import Upset
 ```
 
-Then, to create an UpSet plot, we structure the data like this: 
+To create an UpSet plot, we structure the data like this: 
 
 ```
 import pandas as pd
 
+# create sample data ({'class_name': [boolean indicators]})
 data = {
     'Class A': [True, True, True, False, False, True],
     'Class B': [True, True, True, True, True, False],
     'Class C': [False, False, False, True, True, True]
 }
 
+# convert sample data dict to pd.DataFrame
 df = pd.DataFrame(data)
 ```
 
-After creating your sample data, you can simply pass the DataFrame to the `generate_plot` method to create a plotly figure of an UpSet plot.
+Then, simply pass the DataFrame to the `generate_plot` method to create a Plotly figure of an UpSet plot.
 
 ```
+# create UpSet figure
 upset = Upset.generate_plot(df)
+
+# show the figure
 upset.show()
 ```
 
@@ -69,7 +88,10 @@ You can also change the colors and sizing for various aspects of the plot by pas
 
 ```
 upset = Upset.generate_plot(
+    
+    # sample data
     df,
+
     # change category colors to a light blue, green, and yellow
     categories_colors=['#3987CA', '#FFC300', '#39CA41'],
 
@@ -87,7 +109,7 @@ upset = Upset.generate_plot(
     <img src="upsetty/public/images/readme/examples/upset_chart_demo_1.png">
 </p>
 
-## 📌 Future Plans
+# 📌 Future Plans
 
 ### Auto-adjusting margins for variable class labels
 
