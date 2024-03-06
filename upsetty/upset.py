@@ -6,22 +6,25 @@ from .utils import *
 
 class Upset:
     
-    def generate_plot(df, **kwargs):
+    def generate_plot(df, value_col=None, **kwargs):
         
         params = get_params(kwargs)
         params = get_category_color_mapping(df, params)
         
-        subsets = find_subsets(df)
-        subset_sizes = find_subset_sizes(df, subsets)
+        classes = find_classes(df)
+        class_counts = find_class_counts(classes, df, value_col)
+        
+        subsets = find_subsets(classes)
+        subset_sizes = find_subset_sizes(df, classes, subsets, value_col)
         plot_df = create_plot_df(subsets, subset_sizes)
-        subsets, scatter_x, scatter_y, max_y = determine_pos_x_y(df, subsets, plot_df)
+        subsets, scatter_x, scatter_y, max_y = determine_pos_x_y(classes, subsets, plot_df)
         
         fig = make_subplots(1, 3, horizontal_spacing=0)
-        fig = add_association_markers(fig, df, subsets, scatter_x, scatter_y, max_y, params)
+        fig = add_association_markers(fig, classes, subsets, scatter_x, scatter_y, max_y, params)
         fig = add_subset_counts_bar(fig, subsets, plot_df, params)
-        fig = add_category_labels(fig, df, scatter_y, params)
-        fig, true_counts = add_category_counts_bar(fig, df, params)
-        fig = autosize(fig, true_counts)
+        fig = add_category_labels(fig, classes, scatter_y, params)
+        fig = add_category_counts_bar(fig, class_counts, params)
+        fig = autosize(fig, class_counts)
         
         return fig
         

@@ -4,8 +4,8 @@
 </div>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/Latest%20release-v0.1.2-blue?style=flat&logo=GitHub&logoColor=white&labelColor=black&color=%23e02d60">
-    <img src="https://img.shields.io/badge/Downloads-109-blue?style=flat&logo=GitHub&logoColor=white&labelColor=black&color=%235696d0">
+    <img src="https://img.shields.io/badge/Latest_release-v0.1.3-blue?logo=GitHub&logoColor=white&labelColor=black&color=%23e12a61">
+    <img src="https://img.shields.io/badge/Downloads-411-blue?logo=GitHub&logoColor=white&labelColor=black&color=%235596d0">
 </p>
 
 <div align="center">
