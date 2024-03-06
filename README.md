@@ -53,7 +53,7 @@ Python package for creating [UpSet plots](https://en.wikipedia.org/wiki/UpSet_Pl
 An UpSet plot is a diagram used to quantitatively visualize sets and their interactions. They are particularly useful visuals for determining the overlap between different groups, as an alternative to [Venn](https://en.wikipedia.org/wiki/Venn_diagram) or [Euler diagrams](https://en.wikipedia.org/wiki/Euler_diagram), which can become cluttered and hard to read with more than a few sets.
 
 <div align="center">
-    <img width="600px" src="upsetty/public/images/readme/examples/comparing_venn_and_upset.png" alt="Comparing Venn Diagram and UpSet Plot for 5 Interacting Sets">
+    <img width="600px" src="https://github.com/eskin22/upsetty/blob/main/upsetty/public/images/readme/examples/comparing_venn_and_upset.png?raw=true" alt="Comparing Venn Diagram and UpSet Plot for 5 Interacting Sets">
 </div>
 
 ### ✨ Why create upsetty?
@@ -107,7 +107,7 @@ upset.show()
 Using the sample data provided above, the output is pictured below:
 
 <p align="center">
-    <img src='upsetty/public/images/readme/examples/upset_chart_demo_0.png' alt="Example UpSet Plot">
+    <img src='https://github.com/eskin22/upsetty/blob/main/upsetty/public/images/readme/examples/upset_chart_demo_0.png?raw=true' alt="Example UpSet Plot">
 </p>
 
 > [!NOTE]  
@@ -135,7 +135,33 @@ upset = Upset.generate_plot(
 )
 ```
 <p align="center">
-    <img src="upsetty/public/images/readme/examples/upset_chart_demo_1.png" alt="Example UpSet Plot with Custom Format">
+    <img src="https://github.com/eskin22/upsetty/blob/main/upsetty/public/images/readme/examples/upset_chart_demo_1.png?raw=true" alt="Example UpSet Plot with Custom Format">
+</p>
+
+By default, the function expects a `DataFrame` with columns of all boolean values, indicating the presence of absence of a given class.
+
+If you wish to compute set instersection based on some other value in your data, you can do so like this:
+
+```
+data = {
+    'Class A': [True, True, False, False, True, True, False],
+    'Class B': [True, False, True, False, True, False, True],
+    'Class C': [True, False, False, True, False, True, True],
+
+    # adding a column 'Value' of non-boolean numbers
+    'Value': [1, 2, 3, 4, 5, 6, 7]
+}
+
+df = pd.DataFrame(data)
+
+upset = Upset.generate_plot(df, 'Value')
+upset.show()
+```
+
+The code above will compute the sum of values for each subset within the classes, as depicted below.
+
+<p align="center">
+    <img src="https://github.com/eskin22/upsetty/blob/main/upsetty/public/images/readme/examples/upset_chart_demo_2.png?raw=true" alt="Example UpSet Plot based on 'Value'">
 </p>
 
 # 📌 Future Plans
